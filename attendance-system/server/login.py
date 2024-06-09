@@ -3,8 +3,17 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 import jwt
 from datetime import datetime, timedelta
 from students import get_student, verify_password
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Add your frontend origin here
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
 
 SECRET_KEY = "k354v4n"
 ALGORITHM = "HS256"
