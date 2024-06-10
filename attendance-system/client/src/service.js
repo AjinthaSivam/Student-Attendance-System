@@ -7,8 +7,12 @@ const login = async (username, password) => {
         username,
         password
     }));
-    if (response.data.access_token) {
-        localStorage.setItem("user", JSON.stringify(response.data));
+    if (response.data.access_token && response.data.username) {
+        const userData = {
+            access_token: response.data.access_token,
+            username: response.data.username
+        };
+        localStorage.setItem("user", JSON.stringify(userData));
     }
     return response.data;
 };

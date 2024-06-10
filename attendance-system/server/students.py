@@ -4,15 +4,15 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 students = {
     "harry": {
-        "username": "harry",
+        "username": "Harry",
         "hashed_password": pwd_context.hash("harry123")
     },
     "john": {
-        "username": "john",
+        "username": "John",
         "hashed_password": pwd_context.hash("john123")
     },
     "maria": {
-        "username": "maria",
+        "username": "Maria",
         "hashed_password": pwd_context.hash("maria123")
     }
 }
